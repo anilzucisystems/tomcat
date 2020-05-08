@@ -1,0 +1,63 @@
+NETWORK SETUP 
+
+	1.Adjust the MaxUserPort in Command prompt
+		netsh int ipv4 show dynamicport tcp.(To list the number ports)
+	  To increase the range to the maximum allowed value for tcp v4, use the following command:
+		netsh int ipv4 set dynamicport tcp start=1500 num=64511
+	2.Added TcpTimedWaitDelay
+		Go to Run, Type: regedit
+		Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters
+		Value: TcpTimedWaitDelay
+		DataType: REG_DWORD
+		Default value: 0x78 (120 decimal)
+	3.Added DefaultTTL
+		Go to run, Type: regedit
+		Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters.
+		Name: DefaultTTL
+		Type: REG_DWORD
+		Valid Range: 1-255 (200)
+	4.After that, please restart the computer
+
+
+DATABASE SETUP
+	
+	1.Download and Install MSSQL
+	2.Execute the script files for creating Schema for both ContentSync
+	3.Exeute the insert queries as well.
+
+PHYSICAL FOLDERS
+	Make below folders in your Machine:
+	Base Folder
+		1.C:\Users\Administrator\sa
+
+	Folder for Storing Assets from AEM
+		2.C:\Users\Administrator\sa\ExtractFiles
+		3.C:\Users\Administrator\sa\ExtractFiles\ports
+		4.C:\Users\Administrator\sa\ExtractFiles\Files
+
+	Folder for saving logs for all 4 services 
+		5.C:\Users\Administrator\sa\logs
+		6.C:\Users\Administrator\sa\logs\assetservice
+		7.C:\Users\Administrator\sa\logs\assetservice\archive
+		8.C:\Users\Administrator\sa\logs\contentsync
+		9.C:\Users\Administrator\sa\logs\contentsync\archive
+
+	Backup folder
+	       10.C:\Users\Administrator\sa\uploadedfiles\bannerimages
+	       11.C:\Users\Administrator\sa\uploadedfiles\carouselimages
+
+TOMCAT
+
+	1. Download the tomcat repo from github
+	2. Change directory into tomcat repo folder\conf
+	3. Change the ssl certificate path inside the server.xml file that is inside the tomcat repo folder\conf
+	4. Save the server.xml file
+	5. Change directory into tomcat repo folder\bin
+	6. Open Command Prompt in the bin folder
+	7. Start the tomcat sever using startup.bat inside bin folder
+	8. To Stop the running applications use shutdown.bat inside bin folder
+
+
+
+
+

@@ -1,0 +1,37 @@
+DATABASE SETUP
+	
+	1.Download and Install MSSQL
+	2.Execute the script files for creating Schema for ControlCentre
+	3.Execute the insert queries as well.
+
+PHYSICAL FOLDERS
+	Make below folders in your Machine:
+	Base Folder
+		1.C:\Users\Administrator\sa
+
+	Folder for holding Language json
+		2.C:\Users\Administrator\sa\config
+		3.C:\Users\Administrator\sa\config\language
+	
+	Folder for saving logs for all 4 services 
+		4.C:\Users\Administrator\sa\logs
+		5.C:\Users\Administrator\sa\logs\ccapi
+		6.C:\Users\Administrator\sa\logs\ccapi\archive
+		7.C:\Users\Administrator\sa\logs\ccui
+		8.C:\Users\Administrator\sa\logs\ccui\archive
+		
+	Backup folder
+		9.C:\Users\Administrator\sa\uploadedfiles\carouselbannerzip
+	       10.C:\Users\Administrator\sa\uploadedfiles\assetzip
+
+TOMCAT
+
+	1. Download the tomcat repo from github
+	2. Change directory into tomcat repo folder\conf
+	3. Change the ssl certificate path inside the server.xml file that is inside the tomcat repo folder\conf
+	4. Save the server.xml file
+	5. Change directory into tomcat repo folder\bin
+	6. Open Command Prompt in the bin folder
+	7. Start the tomcat sever using startup.bat inside bin folder
+	8. To Stop the running applications use shutdown.bat inside bin folder
+
